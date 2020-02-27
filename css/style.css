@@ -13,7 +13,7 @@ button[data-action="stop"] {
 }
 button[data-action="start"]:hover,
 button[data-action="stop"]:hover {
-  background-color: seashell;
+  background-color: salmon;
 }
 .buttons {
   display: flex;
