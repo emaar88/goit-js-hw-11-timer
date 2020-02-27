@@ -13,11 +13,9 @@ class CountdownTimer {
     this.action = this.action.bind(this);
     this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
-    console.log(this.secs);
   }
   action() {
     const time = this.delta - Date.now();
-    console.log(time);
     const secs = Math.floor((time % (1000 * 60)) / 1000);
     const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
     const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -32,7 +30,7 @@ class CountdownTimer {
   start() {
     if (!this.isActive) {
       this.isActive = true;
-      this.timerId = setInterval(this.action, 1000);
+      this.timerId = setInterval(this.action, 10);
       this.dateStart = Date.now();
     }
   }
@@ -42,6 +40,7 @@ class CountdownTimer {
   }
 
   init() {
+    window.addEventListener("DOMContentLoaded", this.start);
     this.startBtn.addEventListener("click", this.start);
     this.stopBtn.addEventListener("click", this.stop);
   }
