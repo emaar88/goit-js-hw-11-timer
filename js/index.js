@@ -7,7 +7,6 @@ class CountdownTimer {
     this.action = this.action.bind(this);
     this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
-    this.markup = null;
   }
   createMarkup() {
     console.log(this.selector);
